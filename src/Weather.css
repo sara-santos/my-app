@@ -138,3 +138,9 @@
 .card-text {
   font-size: 11px;
 }
+
+.link {
+  color: black;
+  text-align: center;
+  font-size: 12px;
+}

@@ -1,6 +1,5 @@
 import React from "react";
 import "./Weather.css";
-import axios from "axios";
 
 export default function Weather() {
   let weatherData = {
@@ -100,6 +99,10 @@ export default function Weather() {
         <br />
         <div className="row" id="forecast"></div>
       </div>
+      <p className="link">
+        <a href="https://github.com/sara-santos/my-app">Open-source code</a>, by
+        Sara Santos
+      </p>
     </div>
   );
 }
