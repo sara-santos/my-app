@@ -14,12 +14,13 @@ export default function Weather(props) {
       city: response.data.name,
       temperature: response.data.main.temp,
       date: new Date(response.data.dt * 1000),
-      description: response.data.weather[0].description,
+      description: response.data.weather[0].main,
       icon: response.data.weather[0].icon,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
       feelsLike: response.data.main.feels_like,
     });
+    console.log(response.data);
   }
 
   function search() {
@@ -37,15 +38,18 @@ export default function Weather(props) {
     setCity(event.target.value);
   }
 
-  function searchLocation(position) {
-    let apiKey = "01cfeb5e2b1834069e5680d99ea862b7";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
+  function displayPosition(position) {
+    let apiUrlCurrent = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=294e4b388de693d904ecaa1582666157`;
+    axios.get(apiUrlCurrent).then(handleResponse);
   }
 
-  function getCurrentLocation(event) {
+  function getCurrentPosition() {
+    navigator.geolocation.getCurrentPosition(displayPosition);
+  }
+
+  function handleClick(event) {
     event.preventDefault();
-    navigator.geolocation.getCurrentPosition(searchLocation);
+    getCurrentPosition();
   }
 
   if (weatherData.loaded) {
@@ -77,7 +81,7 @@ export default function Weather(props) {
                   <button
                     className="current-location-button"
                     id="current-location-button"
-                    onSubmit={getCurrentLocation}
+                    onClick={handleClick}
                   >
                     <i className="fas fa-map-marker-alt"></i>
                   </button>

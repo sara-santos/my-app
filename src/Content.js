@@ -27,7 +27,7 @@ export default function Content(props) {
           <ul>
             <li>
               <p className="sunset">Feels Like</p>
-              <p id="sunset">{Math.round(props.info.feels_like)} °C</p>
+              <p id="sunset">{Math.round(props.info.feelsLike)} °C</p>
               <br />
             </li>
             <li>
