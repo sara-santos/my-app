@@ -1,7 +1,7 @@
 .weather-app {
   max-width: 380px;
-  margin: 20px auto;
-  padding: 15px;
+  margin: 15px auto;
+  padding: 12px;
   border-radius: 10px;
   background-color: #000000;
   background-image: url("https://www.transparenttextures.com/patterns/batthern.png");
@@ -17,7 +17,7 @@
   color: white;
   font-size: 20px;
   position: relative;
-  right: 30px;
+  right: 20px;
   padding: 3px;
 }
 
@@ -25,7 +25,7 @@
   font-size: 20px;
   padding: 3px;
   position: relative;
-  right: -18px;
+  right: -30px;
   top: -38px;
   color: white;
   background-color: transparent;
@@ -40,6 +40,7 @@
   margin: 5px;
   font-size: 12px;
   position: relative;
+  left: 10px;
 }
 
 .mid {
